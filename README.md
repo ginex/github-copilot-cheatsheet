@@ -1,23 +1,22 @@
 # GitHub Copilot – Aide‑mémoire (mars 2026)
 
-## Personnalisation des instructions
+## Instructions
 
 Texte ajouté automatiquement au prompt de chaque requête pour orienter le comportement de Copilot  
 (conventions de code, technologies, règles métier, architecture…).  
 Évite de répéter le contexte à chaque conversation.
 
-### Instructions de dépôt
-- **Globales** : `.github/copilot-instructions.md` — injectées dans chaque requête, pour tout le dépôt.
-- **Ciblées** : `.github/instructions/*.instructions.md` — instructions appliquées sélectivement via `applyTo` (glob patterns comme `applyTo: "**/*.ts"`).
+### Instructions de repository
+- **Globales** : `.github/copilot-instructions.md` — injectées dans chaque requête, pour tout le repo.
+- **Ciblées** : `.github/instructions/*.instructions.md` — instructions appliquées sélectivement (ex: mettre `applyTo: "src/backend/**/*.ts"` au début du fichier entre --- et ---).
 
 ### Fichier `AGENTS.md`
 Définit un ou plusieurs **agents personnalisés** (ex. : *security-reviewer*, *api-designer*, *migration-agent*).  
 Chargé comme **contexte système** lors de l’exécution du mode Agent.  
-Peut être décliné par sous-dossiers pour un comportement spécifique.
+On peut avoir plusieurs AGENTS.md dans des sous-dossiers et Copilot choisira le plus proche dans l’arborescence.
 
 ### Instructions personnelles
-Sur GitHub.com — définissent des préférences personnelles permanentes (style de code, technologies, format de réponses).  
-Appliquées dans n’importe quel dépôt ou IDE.
+Sur GitHub.com, appliquées dans n’importe quel repo ou IDE — définissent des préférences personnelles permanentes (style de code, technologies, format de réponses).
 
 ### Instructions d’organisation
 Définissent des règles globales appliquées à tous les projets d’une organisation.
@@ -40,7 +39,7 @@ Fichiers dans `.github/prompts/*.prompt.md`.
 Permettent :
 - d’invoquer un prompt via `/nom-commande`,
 - de définir modèle / agent / outils / MCP,
-- d'afficher un hint dans le chat.
+- de définir un tooltip qui sera affiché dans le chat.
 
 ### Skills
 Extensions de capacités pour les agents.  
@@ -66,7 +65,7 @@ Utilisés pour :
 |--------------|-------------|
 | **Ask** | Questions, exploration, explications. Lecture seule. |
 | **Edit** | Modifications unitaires sur un ou plusieurs fichiers (avec validation). |
-| **Plan** | *Nouveau* : création d’un plan structuré avant toute modification. Recherche dans le codebase, analyse, questions de clarification. **Aucun changement sans validation.** |
+| **Plan** | création d’un plan structuré avant toute modification. Recherche dans le codebase, analyse, questions de clarification. **Aucun changement sans validation.** |
 | **Agent** | Exécution autonome : modifications multi-fichiers, lancement de commandes, tests, création de PR. Adapté aux tâches complexes. |
 
 ---
@@ -78,7 +77,7 @@ Copilot utilise automatiquement :
 - les fichiers ouverts,  
 - la sélection,  
 - la structure du dossier,  
-- les symboles du projet,  
+- les symboles du projet (méthodes, variables, classes, etc)  
 - le diff Git en cours,  
 - l’historique du chat,  
 - les instructions (personnelles, dépôt, organisation),  
@@ -102,7 +101,7 @@ Utilisables via `#variable`.
 
 ---
 
-## Sélection du modèle (2026)
+## Sélection du modèle
 
 | Modèle | Usage recommandé |
 |--------|------------------|
@@ -140,6 +139,8 @@ Copilot peut analyser une PR et commenter automatiquement.
 
 ### Prompts alternatifs (expérimental)
 VS Code permet d’utiliser des variantes du prompt système.
+GitHub.com → Repo → Settings → Rules → Rulesets → New Ruleset
+→ activer “Automatically request Copilot code review”
 
 ---
 
