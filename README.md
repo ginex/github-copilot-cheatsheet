@@ -136,11 +136,18 @@ Disponible via `gh copilot` :
 
 ### Revue automatique des PR
 Copilot peut analyser une PR et commenter automatiquement.
+GitHub.com → Repo → Settings → Rules → Rulesets → New Ruleset
+→ activer “Automatically request Copilot code review”
+
+### Agent HQ
+Plateforme centrale de GitHub qui permet de gérer, orchestrer et contrôler tous les agents (GitHub et tiers) depuis un même espace.
+Par exemple:
+- Analyser du code, exécuter des tâches complexes et proposer des correctifs
+- Cloner le repo dans une VM cloud, exécuter tests et créer des PR
+- Superviser plusieurs agents, suivre leur activité et contrôler leurs autorisations dans l’organisation
 
 ### Prompts alternatifs (expérimental)
 VS Code permet d’utiliser des variantes du prompt système.
-GitHub.com → Repo → Settings → Rules → Rulesets → New Ruleset
-→ activer “Automatically request Copilot code review”
 
 ---
 
