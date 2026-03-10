@@ -64,7 +64,6 @@ Utilisés pour :
 | Mode / Agent | Description |
 |--------------|-------------|
 | **Ask** | Questions, exploration, explications. Lecture seule. |
-| **Edit** | Modifications unitaires sur un ou plusieurs fichiers (avec validation). |
 | **Plan** | création d’un plan structuré avant toute modification. Recherche dans le codebase, analyse, questions de clarification. **Aucun changement sans validation.** |
 | **Agent** | Exécution autonome : modifications multi-fichiers, lancement de commandes, tests, création de PR. Adapté aux tâches complexes. |
 
