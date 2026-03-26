@@ -145,6 +145,28 @@ Par exemple:
 - Cloner le repo dans une VM cloud, exécuter tests et créer des PR
 - Superviser plusieurs agents, suivre leur activité et contrôler leurs autorisations dans l’organisation
 
+### Agents Handoff
+Mécanisme permettant à un agent de **déléguer une tâche à un autre agent** spécialisé, configuré dans le fichier AGENTS.md.  
+Lorsqu'un handoff est déclenché, un **bouton apparaît dans le chat** : l'utilisateur choisit librement de cliquer dessus pour transférer la tâche à l'agent suivant, ou de continuer avec l'agent courant.  
+Utile pour orchestrer des workflows multi-agents où chaque agent prend en charge une étape précise (ex. : un agent analyse, un autre génère du code, un troisième crée la PR).  
+Le contexte et l'état de la tâche sont transmis automatiquement au nouvel agent.
+
+### Agents Modernizers
+Agents spécialisés dans la **modernisation et la migration de code legacy**.  
+Nécessitent l'installation séparée du **Modernizer CLI** (agent volumineux, non inclus par défaut dans Copilot).
+
+Fonctionnement en 3 étapes :
+1. **Analyse** — l'agent inspecte le code existant et génère des **fichiers .md** décrivant l'état actuel, les dépendances et les problèmes détectés.
+2. **Plan** — on peut ensuite lui demander de créer un **plan de migration structuré**, détaillant les transformations à effectuer étape par étape.
+3. **Exécution autonome** — une fois le plan validé, l'agent peut l'**exécuter seul**, en appliquant les modifications de manière progressive et contrôlée.
+
+### Checkpoints
+Points de sauvegarde créés automatiquement (ou manuellement) **pendant l'exécution d'un agent**.  
+Permettent de :
+- revenir à un état antérieur si une modification est incorrecte,
+- réviser les changements étape par étape,
+- reprendre une session interrompue sans perdre la progression.
+
 ### Prompts alternatifs (expérimental)
 VS Code permet d’utiliser des variantes du prompt système.
 
