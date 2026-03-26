@@ -1,12 +1,16 @@
-# GitHub Copilot – Aide‑mémoire (mars 2026)
+# GitHub Copilot – Aide-mémoire (mars 2026)
 
-## Instructions
+[📋 Instructions](#-instructions) • [⚙️ Commandes & Hooks](#️-commandes-prompt-files-skills--hooks) • [💬 Modes de chat](#-modes-de-chat-mises-à-jour-2026) • [🔍 Contexte](#-sources-automatiques-de-contexte) • [#️⃣ Variables](#️⃣-variables-de-contexte-chat) • [🤖 Modèles](#-sélection-du-modèle) • [🔧 Intégrations](#-intégrations--outils) • [🔒 Sécurité](#-sécurité--confidentialité) • [🌐 Ressources](#-ressources-communautaires) • [✨ Prompt Engineering](#-prompt-engineering)
+
+---
+
+## 📋 Instructions
 
 Texte ajouté automatiquement au prompt de chaque requête pour orienter le comportement de Copilot  
 (conventions de code, technologies, règles métier, architecture…).  
 Évite de répéter le contexte à chaque conversation.
 
-### Instructions de repository
+### 📋 Instructions de repository
 - **Globales** : `.github/copilot-instructions.md` — injectées dans chaque requête, pour tout le repo.
 - **Ciblées** : `.github/instructions/*.instructions.md` — instructions appliquées sélectivement (ex: mettre `applyTo: "src/backend/**/*.ts"` au début du fichier entre --- et ---).
 
@@ -15,10 +19,10 @@ Définit un ou plusieurs **agents personnalisés** (ex. : *security-reviewer*, *
 Chargé comme **contexte système** lors de l’exécution du mode Agent.  
 On peut avoir plusieurs AGENTS.md dans des sous-dossiers et Copilot choisira le plus proche dans l’arborescence.
 
-### Instructions personnelles
+### 📋 Instructions personnelles
 Sur GitHub.com, appliquées dans n’importe quel repo ou IDE — définissent des préférences personnelles permanentes (style de code, technologies, format de réponses).
 
-### Instructions d’organisation
+### 📋 Instructions d’organisation
 Définissent des règles globales appliquées à tous les projets d’une organisation.
 
 ### Copilot Memory
@@ -32,7 +36,7 @@ Complète les Instructions personnelles sans les remplacer.
 
 ---
 
-## Commandes, Prompt Files, Skills & Hooks
+## ⚙️ Commandes, Prompt Files, Skills & Hooks
 
 ### Commandes personnalisées (Prompt Files)
 Fichiers dans `.github/prompts/*.prompt.md`.  
@@ -59,7 +63,7 @@ Utilisés pour :
 
 ---
 
-## Modes de chat (mises à jour 2026)
+## 💬 Modes de chat (mises à jour 2026)
 
 | Mode / Agent | Description |
 |--------------|-------------|
@@ -69,7 +73,7 @@ Utilisés pour :
 
 ---
 
-## Sources automatiques de contexte
+## 🔍 Sources automatiques de contexte
 
 Copilot utilise automatiquement :
 - le fichier actif,  
@@ -85,7 +89,7 @@ Copilot utilise automatiquement :
 
 ---
 
-## Variables de contexte (Chat)
+## #️⃣ Variables de contexte (Chat)
 
 Utilisables via `#variable`.
 
@@ -100,7 +104,7 @@ Utilisables via `#variable`.
 
 ---
 
-## Sélection du modèle
+## 🤖 Sélection du modèle
 
 | Modèle | Usage recommandé |
 |--------|------------------|
@@ -115,7 +119,7 @@ Utilisables via `#variable`.
 
 ---
 
-## Intégrations & Outils
+## 🔧 Intégrations & Outils
 
 ### MCP (Model Context Protocol)
 Standard permettant aux modèles d’interagir avec :
@@ -188,7 +192,7 @@ VS Code permet d’utiliser des variantes du prompt système.
 
 ---
 
-## Sécurité & Confidentialité
+## 🔒 Sécurité & Confidentialité
 
 ### Exclusion de fichiers
 - `.copilotignore` — exclure fichiers/dossiers du contexte transmis au modèle  
@@ -202,7 +206,7 @@ VS Code permet d’utiliser des variantes du prompt système.
 
 ---
 
-## Ressources communautaires
+## 🌐 Ressources communautaires
 
 ### Awesome Copilot
 Dépôt communautaire contenant :
@@ -215,7 +219,7 @@ Dépôt communautaire contenant :
 
 ---
 
-## Prompt Engineering
+## ✨ Prompt Engineering
 
 - **Questions / Réponses** : demander une liste de questions oui/non pour affiner.  
 - **Pour & contre** : obtenir plusieurs solutions avec comparaison.  
