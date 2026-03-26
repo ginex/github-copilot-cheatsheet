@@ -145,6 +145,22 @@ Par exemple:
 - Cloner le repo dans une VM cloud, exécuter tests et créer des PR
 - Superviser plusieurs agents, suivre leur activité et contrôler leurs autorisations dans l’organisation
 
+### Agents tiers : Claude Code & Codex
+GitHub Copilot ne se limite pas à son propre agent : il est possible d'utiliser **Claude Code** (Anthropic) et **Codex CLI** (OpenAI) directement comme agents dans VS Code, en complément ou en remplacement de l'agent Copilot natif.
+
+**Configuration :**
+- Installer l'extension **Claude Code** ou **Codex CLI** séparément dans VS Code.
+- Une fois installés, ils apparaissent comme agents sélectionnables dans le chat Copilot (via @claude ou @codex).
+- Peuvent également être déclarés dans AGENTS.md pour être utilisés dans des workflows de handoff.
+
+**Quand utiliser quel agent :**
+
+| Agent | Points forts | Cas d'usage idéaux |
+|-------|-------------|-------------------|
+| **Copilot Agent** | Intégration native GitHub/VS Code, accès aux outils GitHub (PR, issues, actions), suggestions inline | Tâches quotidiennes, navigation dans le codebase, création de PR, workflows GitHub |
+| **Claude Code** | Raisonnement approfondi, excellente compréhension de grands contextes, explications détaillées | Refactoring complexe, analyse d'architecture, revue de code, migrations, documentation |
+| **Codex CLI** | Génération de code pure et rapide, transformations précises, exécution de commandes | Génération de boilerplate, transformations de fichiers, automatisation de tâches shell |
+
 ### Agents Handoff
 Mécanisme permettant à un agent de **déléguer une tâche à un autre agent** spécialisé, configuré dans le fichier AGENTS.md.  
 Lorsqu'un handoff est déclenché, un **bouton apparaît dans le chat** : l'utilisateur choisit librement de cliquer dessus pour transférer la tâche à l'agent suivant, ou de continuer avec l'agent courant.  
